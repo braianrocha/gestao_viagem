@@ -1,0 +1,30 @@
+body,
+html,
+#app {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fundo elegante (gradiente suave azulado/cinza) */
+body {
+  /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+  background: #f8f8ff;
+  background-attachment: fixed;
+}
+
+/* Estilo do Botão Personalizado */
+.btn-custom {
+  background-color: #0d6efd;
+  /* Azul Bootstrap padrão ou a cor da sua marca */
+  color: white;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #0b5ed7;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

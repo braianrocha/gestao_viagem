@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: travel_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www
+    depends_on:
+      - db
+    environment:
+      APP_ENV: local
+      DB_HOST: db
+      DB_DATABASE: travel
+      DB_USERNAME: root
+      DB_PASSWORD: root
+
+  db:
+    image: mysql:8.0
+    container_name: travel_db
+    environment:
+      MYSQL_DATABASE: travel
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
