@@ -5,7 +5,7 @@ const notifications = ref([])
 let intervalId = null
 let hasReloaded = false 
 
-export function useNotifications(toast) {
+export function useNotifications(toast, onNewNotification) {
 
     async function fetchUnread() {
         if (hasReloaded) return
@@ -20,6 +20,7 @@ export function useNotifications(toast) {
             for (const n of newOnes) {
                 toast.success(n.data.message)
                 await markAsRead(n.id) 
+                if (onNewNotification) onNewNotification(n)
             }
 
             hasReloaded = true

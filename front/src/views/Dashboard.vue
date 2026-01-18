@@ -55,7 +55,9 @@ export default {
       return
     }
     this.loadOrders()
-    const { startPolling } = useNotifications(this.toast)
+    const { startPolling } = useNotifications(this.toast, () => {
+      this.loadOrders('')
+    })
     startPolling()
   },
 
