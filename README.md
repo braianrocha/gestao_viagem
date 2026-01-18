@@ -77,7 +77,7 @@ Testes de API cobrindo:
 Clone o projeto disponível no GitHub:
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/braianrocha/gestao_viagem.git
 ```
 
 
