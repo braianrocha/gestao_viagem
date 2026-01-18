@@ -48,8 +48,12 @@ export default {
 
   async mounted() {
     this.toast = useToast()
-
-    this.user = await apiFetch('/me')
+    try {
+      this.user = await apiFetch('/me')
+    } catch {
+      this.$router.push({ name: 'login' })
+      return
+    }
     this.loadOrders()
     const { startPolling } = useNotifications(this.toast)
     startPolling()
