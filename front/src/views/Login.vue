@@ -6,7 +6,7 @@
       <div class="card border-0 shadow-lg rounded-4 bg-white">
         <div class="card-body p-5">
           <div class="text-center mb-5">
-            <h1 class="text-primary fw-bold mb-0">OnFly</h1>
+            <h1 class="text-primary fw-bold mb-0">Pedidos de Viagens</h1>
             <small class="text-muted">Pedidos de Viagens</small>
           </div>
 
