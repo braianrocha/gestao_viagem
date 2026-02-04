@@ -151,7 +151,9 @@ docker exec -it travel_api php artisan test
 
 ```
 
- 
+ 04/02/2026
+
+ ##### Iniciar correções apontadas no feedback
 
 
 
