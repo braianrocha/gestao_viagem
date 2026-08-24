@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-items-center gap-2 pb-3 shadow-sm">
+  <div class="d-flex align-items-center gap-2 pb-3 mb-3 border-bottom">
 
     <div class="position-relative">
       <i class="bi bi-funnel position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>

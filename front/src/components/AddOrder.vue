@@ -1,7 +1,7 @@
 <template>
   <!-- BOTÃO -->
   <button
-    class="btn btn-primary m-2 fw-semibold d-flex align-items-center gap-2"
+    class="btn btn-custom fw-semibold d-flex align-items-center gap-2"
     @click="open"
   >
     <i class="bi bi-plus-lg"></i>

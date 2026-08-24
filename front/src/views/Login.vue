@@ -1,13 +1,16 @@
 <template>
   <Spinner :show="isLoading" />
 
-  <div class="container-fluid d-flex justify-content-center align-items-center h-100">
+  <div class="login-page d-flex justify-content-center align-items-center h-100">
     <div class="col-11 col-sm-8 col-md-6 col-lg-4">
-      <div class="card border-0 shadow-lg rounded-4 bg-white">
+      <div class="surface-card">
         <div class="card-body p-5">
           <div class="text-center mb-5">
-            <h1 class="text-primary fw-bold mb-0">Pedidos de Viagens</h1>
-            <small class="text-muted">Pedidos de Viagens</small>
+            <div class="login-icon mb-3">
+              <i class="bi bi-airplane-fill"></i>
+            </div>
+            <h1 class="fw-bold mb-1 login-title">Pedidos de Viagens</h1>
+            <small class="text-muted">Acesse sua conta para gerenciar seus pedidos</small>
           </div>
 
           <form @submit.prevent="login">
@@ -90,16 +93,24 @@ export default {
 </script>
 
 <style scoped>
-.btn-custom {
-  background-color: #667eea;
-  border-color: #667eea;
-  color: white;
-  font-weight: bold;
+.login-page {
+  background: radial-gradient(circle at top, #eaf1ff 0%, #f4f6fb 60%);
 }
 
-.btn-custom:hover {
-  background-color: #764ba2;
-  border-color: #764ba2;
-  color: white;
+.login-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(13, 110, 253, 0.1);
+  color: var(--color-primary);
+  font-size: 1.5rem;
+}
+
+.login-title {
+  color: var(--color-text);
 }
 </style>

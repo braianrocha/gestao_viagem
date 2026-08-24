@@ -1,19 +1,31 @@
 <template>
-  <div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2 class="mb-0 titulo-dashboard">Pedidos de Viagem</h2>
+  <div class="dashboard-page">
+    <header class="dashboard-topbar">
+      <div class="container d-flex justify-content-between align-items-center py-3">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-airplane-fill text-primary fs-4"></i>
+          <div>
+            <h1 class="mb-0 titulo-dashboard">Pedidos de Viagem</h1>
+            <small v-if="user" class="text-muted">Olá, {{ user.name }}</small>
+          </div>
+        </div>
 
-      <div class="d-flex align-items-center gap-2">
-        <AddOrder @created="onOrderCreated" />
-        <LogoutButton />
+        <div class="d-flex align-items-center gap-2">
+          <AddOrder @created="onOrderCreated" />
+          <LogoutButton />
+        </div>
       </div>
-    </div>
+    </header>
 
     <Spinner :show="isLoading" />
 
-    <OrdersFilter @change="status => loadOrders(status)" />
+    <main class="container py-4">
+      <div class="surface-card p-3 p-md-4">
+        <OrdersFilter @change="status => loadOrders(status)" />
 
-    <OrdersTable :orders="orders" @updateStatus="updateStatus" :isAdmin="!!user?.is_admin" :currentUserId="user?.id" />
+        <OrdersTable :orders="orders" @updateStatus="updateStatus" :isAdmin="!!user?.is_admin" :currentUserId="user?.id" />
+      </div>
+    </main>
   </div>
 </template>
 
@@ -100,9 +112,19 @@ export default {
 
 
 <style scoped>
+.dashboard-page {
+  min-height: 100%;
+}
+
+.dashboard-topbar {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
 .titulo-dashboard {
+  font-size: 1.25rem;
   font-weight: 700;
-  color: #0d6efd;
-  letter-spacing: -0.5px
+  color: var(--color-text);
+  letter-spacing: -0.3px;
 }
 </style>
