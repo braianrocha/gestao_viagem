@@ -135,8 +135,6 @@ class TravelOrderApiTest extends TestCase
             'status' => 'aprovado'
         ]);
 
-        dd($order->toArray());
-
         $this->actingAs($admin, 'api')
             ->patchJson("/api/travel-orders/{$order->id}/status", [
                 'status' => 'cancelado'
