@@ -19,8 +19,10 @@ COPY . .
 # Instala dependências PHP
 RUN composer install --no-interaction --prefer-dist
 
+RUN chmod +x docker/entrypoint.sh
+
 # Porta da API
 EXPOSE 8000
 
-# Sobe o Laravel
-CMD php artisan serve --host=0.0.0.0 --port=8000
+# Aguarda o banco, roda migrations e sobe o Laravel
+ENTRYPOINT ["docker/entrypoint.sh"]
