@@ -62,15 +62,6 @@ export default {
   },
 
   methods: {
-    async init() {
-      this.toast = useToast()
-      this.user = await apiFetch('/me')
-      this.loadOrders()
-
-      // 🔔 inicia notificações
-      const { startPolling } = useNotifications()
-      startPolling()
-    },
     onOrderCreated() {
       this.isLoading = true
 
